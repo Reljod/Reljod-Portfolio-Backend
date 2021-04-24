@@ -1,7 +1,7 @@
 package main
 
 import (
-	"app/algorithm"
+	"github.com/Reljod/Reljod-Portfolio-Backend/app/algorithm"
 )
 
 func main() {
