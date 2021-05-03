@@ -1,10 +1,7 @@
 package main
 
-import (
-	"fmt"
-)
+import "github.com/Reljod/Reljod-Portfolio-Backend/app"
 
 func main() {
-	fmt.Println("Welcome Future Go Developer Reljod!")
-	samplelist.ListExample()
+	app.SetupRouter()
 }

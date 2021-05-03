@@ -1,11 +1,13 @@
-package algorithm
+package algo
 
 import (
 	"container/list"
 	"fmt"
 )
 
-func ListSample() {
+func ListExample() {
+	fmt.Println("This is a sample list package.")
+
 	var intList list.List
 	intList.PushBack(10)
 	intList.PushBack(20)
