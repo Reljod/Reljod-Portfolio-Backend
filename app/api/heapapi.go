@@ -78,7 +78,7 @@ func HeapSort(w http.ResponseWriter, r *http.Request) {
 	ArrayRequest := make([]int, len(heapApiRequest.Array))
 	copy(ArrayRequest, heapApiRequest.Array)
 
-	fmt.Println("HeapApiRequest: ", heapApiRequest)
+	logger.Debug("Unordered Array Request: ", heapApiRequest)
 
 	var heapSortApiResponse HeapSortApiResponse
 
@@ -88,6 +88,8 @@ func HeapSort(w http.ResponseWriter, r *http.Request) {
 
 	heapSortApiResponse.UnorderedArray = intSlice
 	heapSortApiResponse.OrderedArray = orderedIntSlice
+
+	logger.Debug("Ordered Array Response: ", heapApiRequest)
 
 	w.Header().Set("Content-Type", "application/json")
 	setupResponse(&w)
