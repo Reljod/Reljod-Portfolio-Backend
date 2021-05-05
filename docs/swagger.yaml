@@ -1,0 +1,74 @@
+definitions:
+  api.HeapApiRequest:
+    properties:
+      array:
+        items:
+          type: integer
+        type: array
+    type: object
+  api.HeapApiResponse:
+    properties:
+      array:
+        items:
+          type: integer
+        type: array
+      builtHeap:
+        items:
+          type: integer
+        type: array
+    type: object
+  api.HeapSortApiResponse:
+    properties:
+      orderedArray:
+        items:
+          type: integer
+        type: array
+      unorderedArray:
+        items:
+          type: integer
+        type: array
+    type: object
+info:
+  contact: {}
+paths:
+  /heap/build:
+    post:
+      consumes:
+      - application/json
+      description: Builds heap from int array, returns original array and built array
+      parameters:
+      - description: Input todo struct
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/api.HeapApiRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/api.HeapApiResponse'
+      summary: Build a Heap from an int array.
+  /heap/sort:
+    post:
+      consumes:
+      - application/json
+      description: Sorts an unsorted int array, returns unordered and ordered array.
+      parameters:
+      - description: Input todo struct
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/api.HeapApiRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/api.HeapSortApiResponse'
+      summary: Sort an int array using Heap Sort Algorithm
+swagger: "2.0"
