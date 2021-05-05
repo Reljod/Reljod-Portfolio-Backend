@@ -19,7 +19,7 @@ API Backend for my own personal Portfolio written in Golang.
 
 
 ## Rest API
-In local, you can found the Swagger examples at http://localhost:8888/swagger/index.html
+In local, you can find the Swagger examples at http://localhost:8888/swagger/index.html
 ![Swagger Example](assets/docs/swaggerexample.png)
 
 ## Data Structures and Algorithms
