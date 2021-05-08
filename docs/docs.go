@@ -24,6 +24,57 @@ var doc = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
+        "/about": {
+            "get": {
+                "description": "Fetches Information About me.",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Fetches Information About me.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/nosql.Info"
+                        }
+                    }
+                }
+            }
+        },
+        "/about/birthday": {
+            "get": {
+                "description": "Fetches my birthday.",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Fetches my birthday.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            }
+        },
+        "/about/name": {
+            "get": {
+                "description": "Fetches my name.",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Fetches my name.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/nosql.Name_t"
+                        }
+                    }
+                }
+            }
+        },
         "/heap/build": {
             "post": {
                 "description": "Builds heap from int array, returns original array and built array",
@@ -130,6 +181,40 @@ var doc = `{
                     "items": {
                         "type": "integer"
                     }
+                }
+            }
+        },
+        "nosql.Info": {
+            "type": "object",
+            "properties": {
+                "birthdate": {
+                    "type": "integer"
+                },
+                "career": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "$ref": "#/definitions/nosql.Name_t"
+                }
+            }
+        },
+        "nosql.Name_t": {
+            "type": "object",
+            "properties": {
+                "firstname": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "middleName": {
+                    "type": "string"
+                },
+                "nickName": {
+                    "type": "string"
                 }
             }
         }

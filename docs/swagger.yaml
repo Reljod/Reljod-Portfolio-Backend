@@ -28,9 +28,64 @@ definitions:
           type: integer
         type: array
     type: object
+  nosql.Info:
+    properties:
+      birthdate:
+        type: integer
+      career:
+        type: string
+      id:
+        type: string
+      name:
+        $ref: '#/definitions/nosql.Name_t'
+    type: object
+  nosql.Name_t:
+    properties:
+      firstname:
+        type: string
+      lastName:
+        type: string
+      middleName:
+        type: string
+      nickName:
+        type: string
+    type: object
 info:
   contact: {}
 paths:
+  /about:
+    get:
+      description: Fetches Information About me.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/nosql.Info'
+      summary: Fetches Information About me.
+  /about/birthday:
+    get:
+      description: Fetches my birthday.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: integer
+      summary: Fetches my birthday.
+  /about/name:
+    get:
+      description: Fetches my name.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/nosql.Name_t'
+      summary: Fetches my name.
   /heap/build:
     post:
       consumes:
