@@ -24,10 +24,14 @@ func SetupRouter() {
 	router.PathPrefix("/swagger").Handler(httpSwagger.WrapHandler)
 
 	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		http.Redirect(w, r, "/swagger", http.StatusFound)
+		http.Redirect(w, r, "/swagger/", http.StatusFound)
 	})
 	router.HandleFunc(BASEPATH+"/heap/build", api.BuildHeap).Methods("GET", "POST")
 	router.HandleFunc(BASEPATH+"/heap/sort", api.HeapSort).Methods("GET", "POST")
+
+	router.HandleFunc(BASEPATH+"/about", api.Get).Methods("GET")
+	router.HandleFunc(BASEPATH+"/about/name", api.GetName).Methods("GET")
+	router.HandleFunc(BASEPATH+"/about/birthday", api.GetBirthDate).Methods("GET")
 
 	c := cors.New(cors.Options{
 		AllowedOrigins:   []string{"http://localhost:8080"},
