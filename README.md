@@ -57,8 +57,7 @@ The code can be found under the folder ```./app/designpattern/...```
             go run exec/<folder>/<filename.go>
         ```
 5. (Important) Configure Environmental Variables to change the api behavior. The environmental behaviors can be found in ```config.env```. As of now, PORT and logging level can be set by config.env.
-  * (important) set DATABASE_URL to MongoDB URL as currently, the application uses MongoDB as its NoSQL Database.
-  * 
+    - (Important) Set DATABASE_URL to MongoDB URL as currently, the application uses MongoDB as its NoSQL Database.
 
 ## Testing
 - Simply run ```go test -v ./...``` to test all available tests in the Repo.
