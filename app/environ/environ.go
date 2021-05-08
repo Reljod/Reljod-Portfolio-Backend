@@ -15,6 +15,8 @@ type Environ struct {
 	LogLevel string
 }
 
+var DatabaseUrl string
+
 func (env *Environ) Setup() {
 
 	re := regexp.MustCompile(`^(.*` + projectDirName + `)`)
@@ -29,4 +31,5 @@ func (env *Environ) Setup() {
 
 	env.Port = os.Getenv("PORT")
 	env.LogLevel = os.Getenv("LOG")
+	DatabaseUrl = os.Getenv("DATABASE_URL")
 }
