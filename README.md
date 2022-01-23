@@ -12,7 +12,7 @@ API Backend for my own personal Portfolio written in Golang.
   - [Rest API](#rest-api)
   - [Data Structures and Algorithms](#data-structures-and-algorithms)
   - [Design Patterns](#design-patterns)
-  - 
+  - [Best Practices](#best-practices)
   - [Local Development](#local-development)
   - [Testing](#testing)
   - [Benchmark](#benchmark)
