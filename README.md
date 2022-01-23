@@ -12,6 +12,7 @@ API Backend for my own personal Portfolio written in Golang.
   - [Rest API](#rest-api)
   - [Data Structures and Algorithms](#data-structures-and-algorithms)
   - [Design Patterns](#design-patterns)
+  - 
   - [Local Development](#local-development)
   - [Testing](#testing)
   - [Benchmark](#benchmark)
@@ -40,6 +41,9 @@ The code can be found under the folder ```./app/algo/...```
 The code can be found under the folder ```./app/designpattern/...```
 - Design Patterns implemented so far:
   - Adapter Design Pattern
+
+## Best Practices
+- [Go Best Practices](./exec/bestpractice/README.md)
 
 ## Local Development
 1. Git Clone the repo.
